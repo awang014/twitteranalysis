@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- title -->
+    <title>chatgpt twitter analysis</title>
+
+   <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.20/dist/css/uikit.min.css" />
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.20/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.20/dist/js/uikit-icons.min.js"></script>
+
+    <!-- echarts -->
+    <script src="js/echarts.min.js"></script>
+    <style media="screen">
+		#chart_1 {
+			height:400px;
+			width:100%;
+		}
+		#chart_2 {
+			height:300px;
+			width:400px;
+		}
+		#chart_3 {
+			height:250px;
+			width:100%;
+		}
+	</style>
+</head>
+
+
+<body>
+<!-- navbar -->
+	<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+		<nav class="uk-navbar-container uk-navbar-transparent uk-light uk-background-secondary" uk-navbar>
+			<div class="uk-navbar-right">
+				<ul class="uk-navbar-nav">
+					<li class="uk-active"><a href="#section1"><b>ChatGPT</b></a></li>
+					<li class="uk-parent"><a href="#section2"><b>Data Acquisition</b></a></li>
+					<li class="uk-parent"><a href="#section3"><b>User Analysis</b></a></li>
+					<li class="uk-parent"><a href="#section4"><b>Attitude Analysis</b></a></li>
+					<li class="uk-parent"><a href="#section5"><b>Conclusion</b></a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+<!-- cover -->
+    <div class="uk-cover-container uk-height-viewport">
+        <!-- <canvas width="400" height="800"></canvas> -->
+        <img src="img/1.jpg" alt="" uk-cover>
+		<div class="inline">
+		<div class="uk-position-cover uk-dark uk-overlay uk-overlay-primary uk-text-center">
+			<div class="uk-overlay uk-position-center">
+			<h1><b>User analysis of #ChatGPT based on Twitter data</b></h1>
+			<h4>Anyu Wang | 16/01/2023</h4>
+		</div>
+		</div>
+	</div>
+    </div>
+
+<!-- ChatGPT BG -->
+
+    <div class="uk-container uk-margin-large">
+        <h1 id="section1"><b>ChatGPT</b></h1>
+        <p>
+			<a href="https://openai.com/"><b style="color:#2DD0A1">OpenAI</b></a> launched an AI chatbot called <a href="https://openai.com/blog/chatgpt/"><b style="color:#2DD0A1">ChatGPT</b></a> in November 2022. Its comprehension and superb language organization skills are very powerful. Making up stories is an easy task for it. It can even write requests for resumes, write poetry, emails and code. It is considered a super dialogue model. Since it has be launched, it received a lot of buzz due to its powerful performance and application areas. To understand who is using and talking about it and how people are using and commenting on it, I conducted a user analysis with Twitter data.        
+		</p>
+    </div>
+
+
+<div class="uk-background-muted uk-margin-large-top">
+<!-- #Data Acquisition -->
+	<div class="uk-container">
+		<div class="uk-container uk-margin-large"></div>
+        <h1 id="section2"><b>Data Acquisition</b></h1>
+        <p>
+			Data is collected by <a href="https://tags.hawksey.info/"><b style="color:#2DD0A1">TAGS</b></a>, by searching Twitter and capturing all tweets (including tweets, retweets, replies and quotes) that contain the hashtag #chatgpt within a certain period of time. After 3 days of data collection, a total of <b>29,111</b> pieces of data were collected. In the dataset, the first data was collected on 26 December 2022 at 12:45 pm and the last one on 1 January 2023 at 9:21 pm. The duration is 6 days, 8 hours and 36 minutes. The average rate of tweets was <b>3.2 tweets per minute</b>. Overall, #chatgpt is a topic that is being talked about a lot.
+        </p>
+    </div>
+
+<!-- *line chart timeline -->
+    <div id="chart_1" class="uk-container uk uk-margin-top uk-margin-bottom" uk-scrollspy="cls:uk-animation-fade; repeat: true; delay: 200">
+	</div>
+
+</div>
+
+<!-- #User analysis -->
+    <div class="uk-container uk-margin-large">
+        <h1 id="section3" ><b>User Analysis</b></h1>
+		<p>In this section, the characteristics of the users will be analysed. As you read this part, you can generate an initial profile of ChatGPT's users, including their authority, geographical and social attributes. As well I will provide you with links to the homepages of some of the top users, including experts and interesting amateur players. If you want to learn more about them, you could find that in this section.</p>
+	</div>
+
+<!-- #tweeters&Retweeters -->
+	<div class="uk-container uk-margin">
+		<h2><b>Rweets or Retweets</b></h2>
+        <div class="panel">
+<!-- *PIE chart -->
+			<div id="chart_2" class="uk-align-right uk-margin-remove-adjacent" uk-scrollspy-class="uk-animation-slide-right; repeat: true; delay: 500">
+			</div>
+			<p>
+				As the pie chart on the right shows, the number of original tweets in the dataset is close to the number of retweeted tweets. The total number of retweets is <b>15,345</b>, slightly more than the <b>13,765</b> original tweets, but they are still relatively equal. Clearly both are quite important.			
+			</p>
+			<p>
+				However, are retweeters and tweeters the same group of users? Will a lot of retweeters be bots? Who are the top tweeters and retweeters? Are there some key opinion leaders? To what degree do they influence other users?The data is then filtered and analysed. Let's take a deeper look at the tweeters and retweeters to answer these mentioned questions.
+			</p>
+		</div>
+	</div>
+
+<!-- #top 10 analysis -->
+	<div class="uk-container uk-margin-large-bottom">
+		<h2><b>Top 10 users</b></h2>
+        <p>
+			The dataset was filtered for tweets and retweets separately. Then each user is sorted from highest to lowest based on the total number of tweets/retweets. The top 10 users tweeted <b>5.9%</b> of the total number of tweets. And the number of retweets from the top ten users was slightly less, at <b>5.3%</b>. The following two tables show the top ten users with the highest number of tweets and retweets and their specific number of tweets/retweets.		
+		</p>
+<!-- *table top10 -->
+		<div class="uk-grid-medium uk-child-width-expand@s" uk-grid uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 200">
+			<div class="uk-card uk-card-default uk-card-body uk-margin">
+				<h3 class="uk-card-title uk-text-bold uk-text-default uk-text-center ">Top 10 tweeters</h3>
+				<table class="uk-table uk-table-small uk-table-hover uk-table-divider">
+					<thead>
+						<tr>
+							<th>user</th>
+							<th>count</th>
+							<th>bot score</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>newsgpt*</td>
+							<td>195</td>
+							<td>4.4</td>
+						</tr>
+						<tr>
+							<td>MidJourneyAI_*</td>
+							<td>141</td>
+							<td>4.8</td>
+						</tr>
+						<tr>
+							<td>VeilleCyber3*</td>
+							<td>81</td>
+							<td>3.7</td>
+						</tr>
+						<tr>
+							<td>richardkimphd*</td>
+							<td>76</td>
+							<td>3.6</td>
+						</tr>
+						<tr>
+							<td>GrapeSwap*</td>
+							<td>67</td>
+							<td>3.7</td>
+						</tr>
+						<tr>
+							<td>scaffeoa</td>
+							<td>58</td>
+							<td>1.4</td>
+						</tr>
+						<tr>
+							<td>RenwickViki*</td>
+							<td>49</td>
+							<td>3.8</td>
+						</tr>
+						<tr>
+							<td>PhilippeJB_PJB*</td>
+							<td>48</td>
+							<td>4.4</td>
+						</tr>
+						<tr>
+							<td>GiolliLucio</td>
+							<td>48</td>
+							<td>1.6</td>
+						</tr>
+						<tr>
+							<td>ordisoftware</td>
+							<td>45</td>
+							<td>1.2</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="uk-card uk-card-default uk-card-body uk-margin">
+				<h3 class="uk-card-title uk-text-bold uk-text-default uk-text-center">Top 10 retweeters</h3>
+				<table class="uk-table uk-table-small uk-table-hover uk-table-divider">
+					<thead>
+						<tr>
+							<th>user</th>
+							<th>count</th>
+							<th>bot score</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>uCloudifyAI*</td>
+							<td>315</td>
+							<td>3.4</td>
+						</tr>
+						<tr>
+							<td>workationland*</td>
+							<td>106</td>
+							<td>4.6</td>
+						</tr>
+						<tr>
+							<td>laVeilleTechno</td>
+							<td>78</td>
+							<td>2.7</td>
+						</tr>
+						<tr>
+							<td>Probe_IT_*</td>
+							<td>65</td>
+							<td>4.4</td>
+						</tr>
+						<tr>
+							<td>news_nocode*</td>
+							<td>63</td>
+							<td>3.2</td>
+						</tr>
+						<tr>
+							<td>PriorityDomains*</td>
+							<td>55</td>
+							<td>3.2</td>
+						</tr>
+						<tr>
+							<td>DavidWhinray</td>
+							<td>55</td>
+							<td>3.4</td>
+						</tr>
+						<tr>
+							<td>Calcaware</td>
+							<td>30</td>
+							<td>3.1</td>
+						</tr>
+						<tr>
+							<td>So34537797*</td>
+							<td>28</td>
+							<td>4.2</td>
+						</tr>
+						<tr>
+							<td>jayeshmthakur</td>
+							<td>25</td>
+							<td>2.9</td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+			<div class="uk-background-muted uk-padding uk-text-left">
+				<p>
+					To identify the bots among them, I scored these users with Botometer. The score range is 0-5, and the higher the score, the more likely it is to be a bot. At the same time, I visit the users' Twitter pages. I determine whether they are bots based on their tweeting frequency, tweeting focus time, number of original content, registration time, etc. And users who have a high probability of being bots are marked with an upper * in the table.
+				</p>	
+				<p>
+					It can be seen that the percentage of bots is still very high in the Chat GPT topic. But some bot accounts will mark themselves as bots on the homepage instead of bot numbers pretending to be real users. You can even realize that an account may be a bot by its username, such as newsgpt, which is in first place.
+				</p>
+				<p>
+					In order to make the next analysis closer to the real users, the data with high suspicion of bots are removed and the dataset is given a cleanup.
+				</p>	
+			</div>
+		</div>
+	</div>
+
+<!-- #User locations -->
+	<div class="uk-container uk-margin">
+		<h2><b>User Locations</b></h2>
+		<p>
+			Perhaps you are wondering where the users are coming from. In this part you can get a general idea about the popularity of Chat GPT in different regions.		
+		</p>
+		<p>
+			Surprisingly, none of the users added geographic coordinates when they posted. But we can get an idea of where users are coming from by the location information of the profiles. Among them, <b>65.6%</b> of the users show the location.
+		</p>
+		<p>
+			Sorting the location information, we can see that the country with the most users is <b>USA</b>, followed by <b>France</b>, <b>India</b>, <b>UK</b> and <b>Canada</b>.
+		</p>
+	</div>
+
+<div class="uk-container uk-column-1-2 uk-column-divider">
+<!-- *chart goe -->
+    <div id="chart_3" class="uk-container uk uk-margin-top uk-margin-bottom" uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
+	</div>
+	<div class="uk-column-1-2">
+<!-- *PIE chart location -->
+		<div id="chart_4" uk-scrollspy="cls: uk-animation-slide-right; repeat: true">
+		</div>
+<!-- *PIE chart location -->
+		<div id="chart_5" uk-scrollspy="cls: uk-animation-slide-right; repeat: true">
+		</div>
+	</div>
+</div>
+
+<!-- margin -->
+</div>
+<div class="uk-container uk-margin-large-bottom"></div>
+
+<!-- user behavors -->
+<div class="uk-container uk-margin">
+	<h2><b>User behavior</b></h2>
+	<p>
+		In order to have a clearer picture of users' tweets, the figure below shows a visualization of the number of tweets they send. Most users send only <b>1 tweet</b>, and the rest are concentrated in <b>2-5 tweets</b>. There are not many users who tweeted or retweeted a lot in the dataset time, and they have a higher probability of being bots.	
+	</p>
+<!-- bar chart-->
+	<div id="chart_6" uk-scrollspy="cls: uk-animation-fade;repeat: true; delay: 300">
+	</div>
+</div>
+
+<!-- Demographic groupings -->
+<div class="uk-container uk-margin-bottom">
+	<h2><b>Demographic groupings</b></h2>
+	<div class="uk-grid uk-width-3-5">
+		<div>
+		<p>
+			The users' friends on Twitter were analyzed to see if the users belonged to a group in some way. You can see as shown on the right that users with <b>between 100 to 500</b> and <b>between 1k to 5k</b> friends make up the majority.
+		</p>
+		</div>
+		<div></div>
+	</div>
+	
+<!-- chart - followers -->
+<div id="chart_7" ></div>
+</div>
+
+
+<div class="uk-background-muted">
+<!-- #Attitude Analysis -->
+	<div class="uk-container uk-margin-large"></div>
+	<div class="uk-container">
+		<h1 id="section4"><b>Attitude Analysis</b></h1>
+		<p>
+			Chat GPT is a very powerful bot that allows users to ask it to write a poem or calculate a maths problem. It can perform many different tasks. You might be interested in what people talk about under this topic, or curious if users are happy with Chat GPT. This section gives you some insight into the user attitudes.		
+		</p>
+	</div>
+	
+<!-- emotion -->
+	<div class="uk-container uk-margin">
+		<h2><b>Emotions</b></h2>
+		<p>
+			The top thirty tweets were ranked by the number of retweets and the number of replies. <a href="https://monkeylearn.com/"><b style="color:#2DD0A1">MonkeyLearn</b></a> was used to perform sentiment analysis on the text content of these tweets, and the results showed that the text contained positive attitudes with a 92.3% confidence level. This means that users' attitudes towards Chat GPT are largely positive.
+		</p>
+		<p>
+			<a href="https://www.danielsoper.com/sentimentanalysis/default.aspx"><b style="color:#2DD0A1">DanielSoper</b></a> provides a tool to score the sentiment of the text on a scale of -100 to +100. -100 indicates a very negative or serious tone and +100 indicates a very positive or enthusiastic tone. DanielSoper scored the above text 98.7 on the sentiment scale. You can see that the tone of the user is very enthusiastic.
+		</p>
+	</div>
+	
+<!-- topic  -->
+	<div class="uk-container">
+		<h2><b>Topics</b></h2>
+		<p>
+			A word cloud map is a visual means of showing word frequency. The word cloud map below is formed by <a href="https://www.jasondavies.com/wordcloud/"><b style="color:#2DD0A1">JasonDavies</b></a> based on the text content from my database. The larger font size represents the higher frequency of occurrence.		
+		</p>
+		<p class="uk-margin-large-bottom">
+			One aspect that users are concerned about is its functionality, such as generation and query. Users are also very concerned about its applications, such as video, art, and e-book. these are perhaps the areas where users are currently using Chat GPT more. OpenAI, as the development company, and GPT3, are also hotly discussed. The emoji that appear most frequently include 💬, 🎉, 🚀, 👇, 🙌, 🔗, showing that users have a more positive attitude and may hold a certain amount of generated content on display. Users also revaluate Chat GPT, using words such as GREAT. Also, free is a key concern for users.
+		</p>
+	</div>
+
+<!--  word cloud svg -->
+	<div class="uk-container" uk-scrollspy="cls: uk-animation-fade;repeat: true; delay: 500">
+		<svg class="uk-align-center uk-margin-large-bottom" width="960" height="600" version="1.1" xmlns="http://www.w3.org/2000/svg"><g></g><g transform="translate(480,300)scale(1,1)"><text text-anchor="middle" transform="translate(-303,191)rotate(29.999999999999993)" style="font-size: 58px; font-family: Impact; fill: rgb(123, 65, 115);">time</text><text text-anchor="middle" transform="translate(383,10)rotate(29.999999999999993)" style="font-size: 57px; font-family: Impact; fill: rgb(206, 219, 156);">data</text><text text-anchor="middle" transform="translate(357,-230)rotate(29.999999999999993)" style="font-size: 59px; font-family: Impact; fill: rgb(231, 150, 156);">code</text><text text-anchor="middle" transform="translate(-182,67)rotate(-29.999999999999993)" style="font-size: 64px; font-family: Impact; fill: rgb(123, 65, 115);">use</text><text text-anchor="middle" transform="translate(-378,64)rotate(-59.99999999999999)" style="font-size: 58px; font-family: Impact; fill: rgb(181, 207, 107);">via</text><text text-anchor="middle" transform="translate(274,-14)rotate(59.99999999999999)" style="font-size: 66px; font-family: Impact; fill: rgb(107, 110, 207);">using</text><text text-anchor="middle" transform="translate(162,61)" style="font-size: 82px; font-family: Impact; fill: rgb(82, 84, 163);"></text><text text-anchor="middle" transform="translate(230,-130)rotate(30)" style="font-size: 100px; font-family: Impact; fill: rgb(107, 110, 207);">ChatGPT</text><text text-anchor="middle" transform="translate(-134,18)rotate(30)" style="font-size: 90px; font-family: Impact; fill: rgb(156, 158, 222);">RT</text><text text-anchor="middle" transform="translate(-38,107)rotate(30)" style="font-size: 86px; font-family: Impact; fill: rgb(99, 121, 57);">ai</text><text text-anchor="middle" transform="translate(153,-4)rotate(60)" style="font-size: 73px; font-family: Impact; fill: rgb(140, 162, 82);">de</text><text text-anchor="middle" transform="translate(-241,-10)rotate(30)" style="font-size: 71px; font-family: Impact; fill: rgb(181, 207, 107);">new</text><text text-anchor="middle" transform="translate(-166,-88)rotate(30)" style="font-size: 70px; font-family: Impact; fill: rgb(206, 219, 156);">openai</text><text text-anchor="middle" transform="translate(91,40)rotate(0)" style="font-size: 70px; font-family: Impact; fill: rgb(140, 109, 49);">amp</text><text text-anchor="middle" transform="translate(121,-95)rotate(30)" style="font-size: 70px; font-family: Impact; fill: rgb(189, 158, 57);">Google</text><text text-anchor="middle" transform="translate(11,-93)rotate(30)" style="font-size: 67px; font-family: Impact; fill: rgb(231, 186, 82);">search</text><text text-anchor="middle" transform="translate(-68,88)rotate(-60)" style="font-size: 66px; font-family: Impact; fill: rgb(231, 203, 148);">extension</text><text text-anchor="middle" transform="translate(-142,-162)rotate(60)" style="font-size: 66px; font-family: Impact; fill: rgb(132, 60, 57);">just</text><text text-anchor="middle" transform="translate(214,137)rotate(30)" style="font-size: 66px; font-family: Impact; fill: rgb(173, 73, 74);">🔗</text><text text-anchor="middle" transform="translate(91,109)rotate(0)" style="font-size: 65px; font-family: Impact; fill: rgb(214, 97, 107);">GPT3</text><text text-anchor="middle" transform="translate(131,177)rotate(-30)" style="font-size: 64px; font-family: Impact; fill: rgb(231, 150, 156);">video</text><text text-anchor="middle" transform="translate(189,97)rotate(0)" style="font-size: 64px; font-family: Impact; fill: rgb(123, 65, 115);">la</text><text text-anchor="middle" transform="translate(378,72)rotate(-60)" style="font-size: 64px; font-family: Impact; fill: rgb(165, 81, 148);">See</text><text text-anchor="middle" transform="translate(-55,160)rotate(30)" style="font-size: 63px; font-family: Impact; fill: rgb(206, 109, 189);">get</text><text text-anchor="middle" transform="translate(266,100)rotate(60)" style="font-size: 62px; font-family: Impact; fill: rgb(222, 158, 214);">demo</text><text text-anchor="middle" transform="translate(-41,-186)rotate(30)" style="font-size: 62px; font-family: Impact; fill: rgb(57, 59, 121);">ebook</text><text text-anchor="middle" transform="translate(-163,120)rotate(-30)" style="font-size: 61px; font-family: Impact; fill: rgb(82, 84, 163);">👇</text><text text-anchor="middle" transform="translate(-263,138)rotate(60)" style="font-size: 61px; font-family: Impact; fill: rgb(107, 110, 207);">chatbot</text><text text-anchor="middle" transform="translate(52,-236)rotate(-30)" style="font-size: 61px; font-family: Impact; fill: rgb(156, 158, 222);">first</text><text text-anchor="middle" transform="translate(-303,-120)rotate(60)" style="font-size: 61px; font-family: Impact; fill: rgb(99, 121, 57);">like</text><text text-anchor="middle" transform="translate(-12,-39)rotate(30)" style="font-size: 61px; font-family: Impact; fill: rgb(140, 162, 82);">FREE</text><text text-anchor="middle" transform="translate(-311,-48)rotate(-60)" style="font-size: 61px; font-family: Impact; fill: rgb(181, 207, 107);">que</text><text text-anchor="middle" transform="translate(-264,33)rotate(30)" style="font-size: 60px; font-family: Impact; fill: rgb(206, 219, 156);">un</text><text text-anchor="middle" transform="translate(336,-176)rotate(30)" style="font-size: 60px; font-family: Impact; fill: rgb(140, 109, 49);">asked</text><text text-anchor="middle" transform="translate(-178,-207)rotate(-30)" style="font-size: 60px; font-family: Impact; fill: rgb(189, 158, 57);">tech</text><text text-anchor="middle" transform="translate(-349,107)rotate(-60)" style="font-size: 59px; font-family: Impact; fill: rgb(231, 186, 82);">Prompt</text><text text-anchor="middle" transform="translate(235,191)rotate(-30)" style="font-size: 59px; font-family: Impact; fill: rgb(231, 203, 148);">Art</text><text text-anchor="middle" transform="translate(-130,78)rotate(0)" style="font-size: 59px; font-family: Impact; fill: rgb(132, 60, 57);">1</text><text text-anchor="middle" transform="translate(-342,-140)rotate(-60)" style="font-size: 59px; font-family: Impact; fill: rgb(173, 73, 74);">functions</text><text text-anchor="middle" transform="translate(-366,-205)rotate(-60)" style="font-size: 59px; font-family: Impact; fill: rgb(214, 97, 107);">Python</text><text text-anchor="middle" transform="translate(228,-238)rotate(30)" style="font-size: 59px; font-family: Impact; fill: rgb(231, 150, 156);">GPT</text><text text-anchor="middle" transform="translate(320,200)rotate(-30)" style="font-size: 58px; font-family: Impact; fill: rgb(123, 65, 115);">Heres</text><text text-anchor="middle" transform="translate(16,213)rotate(-60)" style="font-size: 58px; font-family: Impact; fill: rgb(165, 81, 148);">day</text><text text-anchor="middle" transform="translate(-381,229)rotate(0)" style="font-size: 57px; font-family: Impact; fill: rgb(206, 109, 189);">great</text><text text-anchor="middle" transform="translate(-78,193)rotate(-60)" style="font-size: 57px; font-family: Impact; fill: rgb(222, 158, 214);">en</text><text text-anchor="middle" transform="translate(-210,-51)rotate(30)" style="font-size: 56px; font-family: Impact; fill: rgb(57, 59, 121);">web</text><text text-anchor="middle" transform="translate(174,210)rotate(-60)" style="font-size: 56px; font-family: Impact; fill: rgb(82, 84, 163);">🙌</text><text text-anchor="middle" transform="translate(-225,-241)rotate(-30)" style="font-size: 55px; font-family: Impact; fill: rgb(107, 110, 207);">les</text><text text-anchor="middle" transform="translate(383,155)rotate(60)" style="font-size: 55px; font-family: Impact; fill: rgb(156, 158, 222);">view</text><text text-anchor="middle" transform="translate(8,39)rotate(-30)" style="font-size: 54px; font-family: Impact; fill: rgb(99, 121, 57);">y</text><text text-anchor="middle" transform="translate(370,247)rotate(0)" style="font-size: 54px; font-family: Impact; fill: rgb(140, 162, 82);">tips</text><text text-anchor="middle" transform="translate(221,-12)rotate(30)" style="font-size: 54px; font-family: Impact; fill: rgb(181, 207, 107);">le</text><text text-anchor="middle" transform="translate(399,-54)rotate(30)" style="font-size: 54px; font-family: Impact; fill: rgb(206, 219, 156);">et</text><text text-anchor="middle" transform="translate(-188,237)rotate(60)" style="font-size: 54px; font-family: Impact; fill: rgb(140, 109, 49);">IA</text><text text-anchor="middle" transform="translate(-185,170)rotate(30)" style="font-size: 54px; font-family: Impact; fill: rgb(189, 158, 57);">5</text><text text-anchor="middle" transform="translate(-53,-101)rotate(-60)" style="font-size: 53px; font-family: Impact; fill: rgb(231, 186, 82);">+</text><text text-anchor="middle" transform="translate(105,-33)rotate(30)" style="font-size: 53px; font-family: Impact; fill: rgb(231, 203, 148);">2</text><text text-anchor="middle" transform="translate(81,247)rotate(0)" style="font-size: 53px; font-family: Impact; fill: rgb(132, 60, 57);">Dec</text><text text-anchor="middle" transform="translate(30,155)rotate(30)" style="font-size: 52px; font-family: Impact; fill: rgb(173, 73, 74);">12</text><text text-anchor="middle" transform="translate(230,28)rotate(0)" style="font-size: 52px; font-family: Impact; fill: rgb(214, 97, 107);">🎉</text><text text-anchor="middle" transform="translate(-388,-257)rotate(-60)" style="font-size: 51px; font-family: Impact; fill: rgb(231, 150, 156);">10</text><text text-anchor="middle" transform="translate(-277,-180)rotate(60)" style="font-size: 50px; font-family: Impact; fill: rgb(123, 65, 115);">Im</text><text text-anchor="middle" transform="translate(-394,-1)rotate(60)" style="font-size: 50px; font-family: Impact; fill: rgb(165, 81, 148);">el</text><text text-anchor="middle" transform="translate(-308,127)rotate(0)" style="font-size: 50px; font-family: Impact; fill: rgb(206, 109, 189);">3</text><text text-anchor="middle" transform="translate(-17,-263)rotate(-30)" style="font-size: 49px; font-family: Impact; fill: rgb(222, 158, 214);">es</text><text text-anchor="middle" transform="translate(172,-126)rotate(60)" style="font-size: 48px; font-family: Impact; fill: rgb(57, 59, 121);">🚀</text><text text-anchor="middle" transform="translate(-63,-177)rotate(-60)" style="font-size: 48px; font-family: Impact; fill: rgb(82, 84, 163);">à</text><text text-anchor="middle" transform="translate(59,-13)rotate(30)" style="font-size: 48px; font-family: Impact; fill: rgb(107, 110, 207);">e</text><text text-anchor="middle" transform="translate(-44,234)rotate(-60)" style="font-size: 48px; font-family: Impact; fill: rgb(156, 158, 222);">4</text><text text-anchor="middle" transform="translate(-265,250)rotate(0)" style="font-size: 48px; font-family: Impact; fill: rgb(99, 121, 57);">Bar</text><text text-anchor="middle" transform="translate(407,95)rotate(30)" style="font-size: 48px; font-family: Impact; fill: rgb(140, 162, 82);">KI</text><text text-anchor="middle" transform="translate(-125,-251)rotate(30)" style="font-size: 47px; font-family: Impact; fill: rgb(181, 207, 107);">💬</text></g></svg>
+	</div>
+
+</div>
+
+<!-- margin -->
+<div class="uk-container uk-margin-large-bottom"></div>
+
+<!-- Hot Tweets -->
+<div class="uk-container">
+	<h2><b>Hot Tweets</b></h2>
+	<p class="uk-margin-medium-bottom">
+		The top tweets are mainly ChatGPT applications, such as how to use it to expand articles, how to generate emails, answer complex questions, and so on. The hottest tweet had 5,490 likes and 1,996 retweets. If you need, you can learn more about the specific tweets below.
+	</p>
+<!-- tweets link -->
+	<div class="uk-column-1-2 uk-column-divider">
+		<blockquote class="twitter-tweet"><p lang="zh" dir="ltr">母语非英语者如何快速写一篇满意的英文文章？可尝试用如下pipeline：<br>1. 用母语写下梗概，用 <a href="https://twitter.com/hashtag/ChatGPT?src=hash&amp;ref_src=twsrc%5Etfw">#ChatGPT</a> 扩充<br>2. 用 <a href="https://twitter.com/hashtag/DeepL?src=hash&amp;ref_src=twsrc%5Etfw">#DeepL</a> 译成英文<br>3. 将英文用 <a href="https://twitter.com/hashtag/quillbot?src=hash&amp;ref_src=twsrc%5Etfw">#quillbot</a> 润色加工<br>4. 最后用 <a href="https://twitter.com/hashtag/grammerly?src=hash&amp;ref_src=twsrc%5Etfw">#grammerly</a> 定稿</p>&mdash; Hui Zheng (@xyz98) <a href="https://twitter.com/xyz98/status/1607731247987433473?ref_src=twsrc%5Etfw">December 27, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		<blockquote class="twitter-tweet"><p lang="en" dir="ltr">📢 New <a href="https://twitter.com/hashtag/ChatGPT?src=hash&amp;ref_src=twsrc%5Etfw">#ChatGPT</a> extension!<br><br>`ChatGPT Writer` is a Chrome extension for Gmail that uses ChatGPT to generate emails or replies based on your prompt! 🤯<br><br>See my demo video below 👇<br><br>Get it here:<br>🔗 <a href="https://t.co/iHz628k4Du">https://t.co/iHz628k4Du</a><br>🌐 <a href="https://t.co/V2V1PeVJGN">https://t.co/V2V1PeVJGN</a><a href="https://twitter.com/LinkedIn?ref_src=twsrc%5Etfw">@LinkedIn</a>/<a href="https://twitter.com/Outlook?ref_src=twsrc%5Etfw">@Outlook</a> coming soon! <a href="https://t.co/YjdeTKPstC">pic.twitter.com/YjdeTKPstC</a></p>&mdash; DataChazGPT 🤯 (not a bot) (@DataChaz) <a href="https://twitter.com/DataChaz/status/1608753378817081344?ref_src=twsrc%5Etfw">December 30, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		<blockquote class="twitter-tweet"><p lang="en" dir="ltr">New day, new <a href="https://twitter.com/hashtag/ChatGPT?src=hash&amp;ref_src=twsrc%5Etfw">#ChatGPT</a> extension! 🤗<br><br>With the `ChatGPT for Search Engines` extension, you can view ChatGPT responses on Google and Bing!<br><br>See my demo video below 👇<br><br>Install it from the Chrome web store:<br>🔗 <a href="https://t.co/ryYMMiN01Y">https://t.co/ryYMMiN01Y</a> <a href="https://t.co/M7lvjceJMz">pic.twitter.com/M7lvjceJMz</a></p>&mdash; DataChazGPT 🤯 (not a bot) (@DataChaz) <a href="https://twitter.com/DataChaz/status/1608188069433196548?ref_src=twsrc%5Etfw">December 28, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/ChatGPT?src=hash&amp;ref_src=twsrc%5Etfw">#ChatGPT</a> to video via <a href="https://twitter.com/hashtag/stablediffusion?src=hash&amp;ref_src=twsrc%5Etfw">#stablediffusion</a> and other AI tools. <a href="https://t.co/AUJTuCk7xH">pic.twitter.com/AUJTuCk7xH</a></p>&mdash; Carlos E. Perez (@IntuitMachine) <a href="https://twitter.com/IntuitMachine/status/1608690077139599360?ref_src=twsrc%5Etfw">December 30, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		<blockquote class="twitter-tweet"><p lang="en" dir="ltr">We could spend some time writing out a thoughtful thread detailing why cross-chain borrowing will improve <a href="https://twitter.com/hashtag/DeFi?src=hash&amp;ref_src=twsrc%5Etfw">#DeFi</a> and <a href="https://twitter.com/hashtag/crypto?src=hash&amp;ref_src=twsrc%5Etfw">#crypto</a> as a whole...<br><br>Or we could let <a href="https://twitter.com/hashtag/ChatGPT?src=hash&amp;ref_src=twsrc%5Etfw">#ChatGPT</a> from <a href="https://twitter.com/OpenAI?ref_src=twsrc%5Etfw">@OpenAI</a> do it 🙌<br><br>Prime is the future 🚀 <a href="https://t.co/DpMvN8YgMy">pic.twitter.com/DpMvN8YgMy</a></p>&mdash; Prime Protocol ➡️ TESTNET Now Live (@prime_protocol) <a href="https://twitter.com/prime_protocol/status/1602709940019265536?ref_src=twsrc%5Etfw">December 13, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/ChatGPT?src=hash&amp;ref_src=twsrc%5Etfw">#ChatGPT</a> maestro <a href="https://twitter.com/fkadev?ref_src=twsrc%5Etfw">@fkadev</a> has just released his very first e-book 🔥🔥🔥<br><br>&quot;The Art of ChatGPT Prompting, a guide to crafting clear and effective prompts&quot; <br><br>Excellent e-book! Filled with great tips! 🙌<br><br>Get it for free (or buy it for a fair price! ;)) at:<br>🔗 <a href="https://t.co/eZLm51N26b">https://t.co/eZLm51N26b</a> <a href="https://t.co/w6qoQXmS13">pic.twitter.com/w6qoQXmS13</a></p>&mdash; DataChazGPT 🤯 (not a bot) (@DataChaz) <a href="https://twitter.com/DataChaz/status/1608578664198995968?ref_src=twsrc%5Etfw">December 29, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	</div>
+</div>
+
+<!-- margin -->
+<div class="uk-container uk-margin-large-bottom"></div>
+
+<!-- conclusion -->
+<div class="uk-background-muted">
+	<div class="uk-container uk-margin-large-bottom"></div> <!-- margin -->
+	<div class="uk-container uk-margin-large">
+		<h1 id="section5"><b>Conclusion</b></h1>
+		<p>
+			ChatGPT is hotly discussed on Twitter and popular among all kinds of users. This article analyzes the basic profile of users, including their geographic location and their social connections. Users' behaviors, such as the number and frequency of tweets and retweets, are analyzed. Also, users' attitudes, including emotions, concerns, etc., are discussed. From these three dimensions it shows who the users are, what they are doing and what they are thinking. In short, the user group is huge. Users are from the United States most. It also contains some top opinion leaders. Regular users, who make up the vast majority more, don't invest a very large amount of time in tweeting. There were six days in total, but the majority of people only sent one tweet or only one reply. Large part of the word frequency discussed by users is related to the daily use of Chat GPT. Art, video and e-books were the highest discussed application areas. The majority of the most popular posts were also tutorials on everyday usage with ChatGPT. Users rated it largely positive and showed enthusiasm. This can give information for the design and research about ChatGPT.		</p>
+	</div>
+
+<!-- margin -->
+<div class="uk-container uk-margin-large-bottom"></div>
+
+</div>
+
+
+
+
+<!-------------------------------------------------------------------------->
+<!-- timeline -->
+	<script type="text/javascript">
+		let chartOne = echarts.init(document.getElementById('chart_1'));
+		const optionChartOne = {
+			title: {
+				text:"Time series and tweets volume of #chatgpt",
+				left:"center",
+				textStyle: {
+					fontSize: 30,
+					color: "#03D69A"//size and color of title
+					}
+			},
+			tooltip: {
+				trigger: 'axis',
+				formatter: function (info) {
+				return 'Time: ' + info[0].axisValue + '</br>Count: ' + info[0].data;
+			}
+			},
+			xAxis: {
+				type: 'category',
+				data: ["26-Dec 14","26-Dec 15","26-Dec 16","26-Dec 17","26-Dec 18","26-Dec 19","26-Dec 20","26-Dec 21","26-Dec 22","26-Dec 23","27-Dec 00","27-Dec 01","27-Dec 02","27-Dec 03","27-Dec 04","27-Dec 05","27-Dec 06","27-Dec 07","27-Dec 08","27-Dec 09","27-Dec 10","27-Dec 11","27-Dec 12","27-Dec 13","27-Dec 14","27-Dec 15","27-Dec 16","27-Dec 17","27-Dec 18","27-Dec 19","27-Dec 20","27-Dec 21","27-Dec 22","27-Dec 23","28-Dec 00","28-Dec 01","28-Dec 02","28-Dec 03","28-Dec 04","28-Dec 05","28-Dec 06","28-Dec 07","28-Dec 08","28-Dec 09","28-Dec 10","28-Dec 11","28-Dec 12","28-Dec 13","28-Dec 14","28-Dec 15","28-Dec 16","28-Dec 17","28-Dec 18","28-Dec 19","28-Dec 20","28-Dec 21","28-Dec 22","28-Dec 23","29-Dec 00","29-Dec 01","29-Dec 02","29-Dec 03","29-Dec 04","29-Dec 05","29-Dec 06","29-Dec 07","29-Dec 08","29-Dec 09","29-Dec 10","29-Dec 11","29-Dec 12","29-Dec 13","29-Dec 14","29-Dec 15","29-Dec 16","29-Dec 17","29-Dec 18","29-Dec 19","29-Dec 20","29-Dec 21","29-Dec 22","29-Dec 23","30-Dec 00","30-Dec 01","30-Dec 02","30-Dec 03","30-Dec 04","30-Dec 05","30-Dec 06","30-Dec 07","30-Dec 08","30-Dec 09","30-Dec 10","30-Dec 11","30-Dec 12","30-Dec 13","30-Dec 14","30-Dec 15","30-Dec 16","30-Dec 17","30-Dec 18","30-Dec 19","30-Dec 20","30-Dec 21","30-Dec 22","30-Dec 23","31-Dec 00","31-Dec 01","31-Dec 02","31-Dec 03","31-Dec 04","31-Dec 05","31-Dec 06","31-Dec 07","31-Dec 08","31-Dec 09","31-Dec 10","31-Dec 11","31-Dec 12","31-Dec 13","31-Dec 14","31-Dec 15","31-Dec 16","31-Dec 17","31-Dec 18","31-Dec 19","31-Dec 20","31-Dec 21","31-Dec 22","31-Dec 23","01-Jan 00","01-Jan 01","01-Jan 02","01-Jan 03","01-Jan 04","01-Jan 05","01-Jan 06","01-Jan 07","01-Jan 08","01-Jan 09","01-Jan 10","01-Jan 11","01-Jan 12","01-Jan 13","01-Jan 14","01-Jan 15","01-Jan 16","01-Jan 17","01-Jan 18","01-Jan 19","01-Jan 20","01-Jan 21"]
+			},
+			yAxis: {
+				type: 'value'
+			},
+			series: [
+				{
+					data: ["50","182","183","262","213","218","198","238","183","201","176","110","149","136","130","143","140","187","195","182","229","259","246","281","284","379","332","341","275","285","226","277","226","235","225","229","213","172","178","189","208","212","241","240","214","233","240","259","275","259","340","259","246","269","194","148","171","154","129","111","143","149","164","155","203","191","209","214","230","216","246","223","227","281","264","262","272","230","223","182","171","180","169","164","120","137","142","136","169","185","210","185","222","224","240","223","319","299","306","331","314","269","261","236","219","221","208","163","161","142","152","177","177","157","182","190","185","131","167","162","181","77","109","177","162","106","129","122","90","109","88","92","77","83","65","62","81","96","119","91","132","147","114","116","160","149","164","201","192","176","139","56"],
+					type: 'line',
+					lineStyle: {
+						color: "#03D69A"//color of line
+					},
+					itemStyle: {
+						color: "#03D69A"//color of circle
+					},
+					markLine: {
+					data: [{ type: 'average', name: 'Avg' }]//average line
+					}
+				}
+			]
+		};
+
+//pie chart
+		let chartTwo = echarts.init(document.getElementById('chart_2'));
+		const optionChartTwo = {
+			tooltip: {
+				trigger: 'item'
+			},
+			legend: {
+				orient: 'horizontal',
+				left: 'right'
+			},
+			series: [
+				{
+				name: 'count',
+				type: 'pie',
+				radius: '50%',
+				data: [
+					{ value: 13765, name: 'Tweets', itemStyle: {color:"#03D69A"}},
+					{ value: 15346, name: 'Retweets', itemStyle: {color:"#545454"}}
+				],
+				emphasis: {
+					itemStyle: {
+						shadowBlur: 10,
+          				shadowOffsetX: 0,
+          				shadowColor: 'rgba(0, 0, 0, 0.5)'
+					}
+				}
+				}
+			]
+		};
+
+//location
+		let chartThree = echarts.init(document.getElementById('chart_3'));
+		const optionChartThree = {
+			title: {
+				text: 'Top 5 countries in number of users'
+			},
+			tooltip: {
+				trigger: 'axis',
+				axisPointer: {
+				type: 'shadow'
+				}
+			},
+			
+			legend: {},
+			grid: {
+				left: '3%',
+				right: '4%',
+				bottom: '3%',
+				containLabel: true
+			},
+			xAxis: {
+				type: 'value'
+			},
+			yAxis: {
+				type: 'category',
+				data: ['Canada', 'UK', 'India', 'France', 'USA']
+			},
+			series: [
+				{
+				//name: 'No. of users',
+				type: 'bar',
+				itemStyle: {
+							borderRadius: 6,
+							borderColor: '#fff',
+							borderWidth: 2},
+				data: [{value: 214, itemStyle: {color:"#03D69A"}}, {value: 438, itemStyle: {color:"#03D69A"}}, {value: 456, itemStyle: {color:"#03D69A"}}, {value: 616, itemStyle: {color:"#03D69A"}}, {value: 901, itemStyle: {color:"#03D69A"}}]
+				}
+			]
+		};
+
+//pie chart geo
+		let chartFour = echarts.init(document.getElementById('chart_4'),null,{
+			wideth:200,
+			height:250
+		});
+				const optionChartFour = {
+					tooltip: {
+						trigger: 'item'
+					},
+					legend: {
+						orient: 'horizontal',
+						top: 'bottom'
+					},
+					series: [
+						{
+						name: 'count',
+						type: 'pie',
+						radius: ['30%','50%'],
+						avoidLabelOverlap: false,
+						itemStyle: {
+							borderRadius: 5,
+							borderWidth: 2},
+						label: {
+							show: false,
+							position: 'center'
+						},
+						emphasis: {
+							label: {
+							show: true,
+							fontSize: 5,
+							fontWeight: 'bold'
+							}
+						},
+						data: [
+							{ value: 0, name: 'Tweets with geo', itemStyle: {color:"#03D69A"}},
+							{ value: 28214, name: 'Tweets without geo', itemStyle: {color:"#545454"}}
+						],
+						emphasis: {
+							itemStyle: {
+								shadowBlur: 10,
+								shadowOffsetX: 0,
+								shadowColor: 'rgba(0, 0, 0, 0.5)'
+							}
+						}
+						}
+					]
+				};
+//pie chart loc
+		let chartFive = echarts.init(document.getElementById('chart_5'),null,{
+			wideth:200,
+			height:250
+		});
+				const optionChartFive = {
+					tooltip: {
+						trigger: 'item'
+					},
+					legend: {
+						orient: 'horizontal',
+						top: 'bottom'
+					},
+					series: [
+						{
+						name: 'count',
+						type: 'pie',
+						radius: ['30%','50%'],
+						avoidLabelOverlap: false,
+						itemStyle: {
+							borderRadius: 6,
+							borderColor: '#fff',
+							borderWidth: 2},
+						label: {
+							show: false,
+							position: 'center'
+						},
+						emphasis: {
+							label: {
+							show: true,
+							fontSize: 10,
+							fontWeight: 'bold'
+							}
+						},
+						data: [
+							{ value: 28214, name: 'Profiles with location' , itemStyle: {color:"#03D69A"}},
+							{ value: 15346, name: 'Profiles without location', itemStyle: {color:"#545454"}}
+						],
+						emphasis: {
+							itemStyle: {
+								shadowBlur: 10,
+								shadowOffsetX: 0,
+								shadowColor: 'rgba(0, 0, 0, 0.5)'
+							}
+						}
+						}
+					]
+				};
+
+//bar chart - behavior
+		let chartSix = echarts.init(document.getElementById('chart_6'),null,{
+			wideth:200,
+			height:400
+		});
+				const optionChartSix = {
+					title: {
+					text:"Histogram of tweeters volumes",
+					left:"center",
+					textStyle: {
+						fontSize: 14,
+						color: "#545454"//size and color of title
+						}
+					},
+					tooltip: {
+						trigger: 'axis',
+						formatter: function (info) {
+						return 'Tweet: ' + info[0].axisValue + '</br>User: ' + info[0].data.value;
+					}
+					},
+					xAxis: {
+						type: 'category',
+						data: ["1","2-5","6-10","11-25",">25"],
+					},
+					yAxis: {
+						type: 'value'
+					},
+					series: [
+						{
+							data: [{value: 17545, itemStyle: {color:"#03D69A"}},{value: 2686, itemStyle: {color:"#03D69A"}},{value: 205, itemStyle: {color:"#03D69A"}},{value: 83, itemStyle: {color:"#03D69A"}},{value: 25, itemStyle: {color:"#03D69A"}}],
+							type: 'bar',
+						}
+					]
+				};
+
+//followers
+let chartSeven = echarts.init(document.getElementById('chart_7'),null,{
+			wideth:400,
+			height:400
+		});
+				const optionChartSeven = {
+					tooltip: {
+						trigger: 'item'
+					},
+					legend: {
+						orient: 'horizontal',
+						left: 'right',
+						orient: 'vertical'
+					},
+					series: [
+						{
+						name: 'count',
+						type: 'pie',
+						radius: [20, 140],
+      					center: ['75%', '50%'],
+						roseType: 'radius',
+						avoidLabelOverlap: false,
+						itemStyle: {
+							borderRadius: 6,
+							borderColor: '#fff',
+							borderWidth: 0.2},
+						label: {
+							show: false,
+							position: 'center'
+						},
+						emphasis: {
+							label: {
+							show: true,
+							fontSize: 10,
+							fontWeight: 'bold'
+							}
+						},
+						data: [
+							{ value: 6706, name: '100-500', itemStyle: {color:"#03D69A"}},
+							{ value: 5526, name: '1k-5k', itemStyle: {color:"#00BAA2"}},
+							{ value: 3638, name: '500-1k' , itemStyle: {color:"#009D9F"}},
+							{ value: 3442, name: '<100>' , itemStyle: {color:"#007F90"}},
+							{ value: 720, name: '5k-10k' , itemStyle: {color:"#1C6378"}},
+							{ value: 546, name: '10k-100k', itemStyle: {color:"#2F4858"}},
+							{ value: 41, name: '>100k' , itemStyle: {color:"#004B75"}},
+						],
+						emphasis: {
+							itemStyle: {
+								shadowBlur: 10,
+								shadowOffsetX: 0,
+								shadowColor: 'rgba(0, 0, 0, 0.5)'
+							}
+						}
+						}
+					]
+				};
+
+
+// draw the chart
+		chartOne.setOption(optionChartOne);
+		chartTwo.setOption(optionChartTwo);
+		chartThree.setOption(optionChartThree);
+		chartFour.setOption(optionChartFour);
+		chartFive.setOption(optionChartFive);
+		chartSix.setOption(optionChartSix);
+		chartSeven.setOption(optionChartSeven);
+// Responsive
+		window.onresize = function() {
+			chartOne.resize();
+			chartTwo.resize();
+			chartThree.resize();
+			chartFour.resize();
+			chartFive.resize();
+			chartSix.resize();
+			chartSeven.resize();
+
+		};
+
+	</script>
+
+</body>
+
+</html>
